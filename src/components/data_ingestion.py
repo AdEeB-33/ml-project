@@ -3,7 +3,7 @@ import sys
 from src.exception import CustomException
 from src.logger import logging
 import pandas as pd
-
+from sklearn import model_selection
 from sklearn.model_selection import train_test_split
 from dataclasses import dataclass
 
@@ -29,7 +29,7 @@ class DataIngestion:
     def initiate_data_ingestion(self):
         logging.info("Entered the data ingestion method or component.")
         try:
-            df = pd.read_csv("notebook\data\stud.csv")
+            df = pd.read_csv("notebook\\data\\stud.csv")
             logging.info("read the dataset as dataframe.")
             
             os.makedirs(os.path.dirname(self.ingestion_config.train_data_path),exist_ok=True)
